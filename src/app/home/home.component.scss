@@ -1,0 +1,29 @@
+
+.custom-btn{
+    width: 100px;
+}
+
+.container{
+  margin-top: 5%;
+}
+
+@media screen and (min-width: 1921px) and (max-width: 1922px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    
+    
+
+    .table {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      display: table;
+    }
+    .table tbody tr th:first-child div {
+      top: -45px;
+    }
+    
+  }
+}

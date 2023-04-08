@@ -1,0 +1,32 @@
+<div class="container">
+<h3>Users List</h3>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Id.</th>
+        <th scope="col">name</th>
+        <th scope="col">username</th>
+        <th scope="col">email</th>
+        <th scope="col">website</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts" (click)="showButtons(post, $event)">  
+        <th scope="row">{{post.id}}</th>
+        <td>{{post.name}}</td>
+        <td>{{post.username}}</td>
+        <td>{{post.email}}</td>
+        <td>{{post.website}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> 
+
+  <ng-container *ngIf="selectPost" >
+    <div class="list-group" [ngStyle]="{'position': 'fixed', 'top.px': yPos, 'left.px': xPos}">
+        <button type="button" class="list-group-item list-group-item-action custom-btn" (click)="showDetails()">Details</button>
+        <button type="button" class="list-group-item list-group-item-action custom-btn" (click)="deletePost()">Delete</button>
+        
+      </div>
+  </ng-container>
+

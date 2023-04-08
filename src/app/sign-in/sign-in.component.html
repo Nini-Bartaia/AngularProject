@@ -1,0 +1,46 @@
+
+
+  <div class="container py-3">
+    
+    <div class="row">
+        <div class="mx-auto col-sm-6">
+                    <!-- form user info -->
+                    <ng-container *ngIf="show">
+                      <div class="alert alert-danger" role="alert">
+                       username or password is incorrect
+                      </div>
+                    </ng-container>
+                    <div class="card ">
+                     
+                        <div class="card-header">
+                            <h4 class="mb-0">Angular Signin</h4>
+                        </div>
+                        <div class="card-body">
+                            <form [formGroup]="myform">
+       
+                                <div class="mb-3">
+                                  <label for="exampleInputText1" class="form-label">USERNAME</label>
+                                  <input  [ngClass]="{'invalid': myform.get('username')?.touched && myform.get('username')?.invalid}" type="text" class="form-control" id="exampleInputText1" aria-describedby="emailHelp" placeholder="username: admin" formControlName="username">
+                                  <ng-container *ngIf="myform.get('username')?.touched && myform.get('username')?.invalid">
+                                    <div id="emailHelp" class="form-text invalid"  >username is required</div>
+                                  </ng-container>
+                                  
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInputPassword1" class="form-label">PASSWORD</label>
+                                  <input [ngClass]="{'invalid': myform.get('password')?.touched && myform.get('password')?.invalid}" type="password" class="form-control" id="exampleInputPassword1" placeholder="password: admin" formControlName="password">
+                                  <ng-container *ngIf="myform.get('password')?.touched && myform.get('password')?.invalid">
+                                    <div id="emailHelp" class="form-text invalid">password is required</div>
+                                  </ng-container>
+                                </div>
+                                <button type="submit" class="btn btn-primary" (click)="onClick()" [disabled]="!myform.valid">Signin</button>
+
+                                
+                              </form> 
+                        </div>
+                    </div>
+        </div>
+    </div>
+    </div>
+    
+                            
